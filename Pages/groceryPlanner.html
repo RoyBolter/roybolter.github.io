@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List Planner</title>
+    <link rel="stylesheet" href="../cssFiles/style.css">
+</head>
+<body>
+
+<div id="global-header"></div>
+
+<div class="container">
+    <div class="input-area">
+        <h2>Add Recipe</h2>
+        <input type="text" id="recipe-name" placeholder="Enter recipe name">
+        <div id="ingredient-container">
+            <input type="text" placeholder="Enter ingredient">
+            <input type="text" placeholder="Enter ingredient">
+            <input type="text" placeholder="Enter ingredient">
+        </div>
+        <button class="special-button" id="add-ingredient">Add Ingredient</button>
+        <button class="special-button" id="save-recipe">Save Recipe</button>
+    </div>
+    <div class="recipe-list">
+        <h2>Recipes</h2>
+        <div id="recipes"></div>
+        <button class="special-button" id="generate-list">Generate List</button>
+    </div>
+</div>
+
+<script src="../scripts/groceryPlannerScript.js"></script>
+<script src="../scripts/header.js"></script>
+</body>
+</html>

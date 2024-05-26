@@ -53,7 +53,7 @@ main {
     padding: 2em;
     margin-bottom: 2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 1200px; /* Max width to prevent absurdly wide containers */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -96,7 +96,6 @@ footer {
     width: 100%;
 }
 
-/* Reverting input and button styles for grocery planner with underline */
 input[type="text"] {
     width: calc(100% - 2em);
     padding: 0.5em;
@@ -143,9 +142,52 @@ button:hover {
     opacity: 0.9;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .highlight {
         flex: 1 1 100%;
     }
+}
+
+.hStack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ingredient-amount {
+    max-width: 50px;
+}
+
+#ingredient-list {
+    background-color: #2e2e3e;
+    border: 1px solid #3b3b52;
+    border-radius: 10px;
+    padding: 2em;
+    margin-top: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#ingredient-list h3 {
+    color: #8a84e2;
+    border-bottom: 2px solid #8a84e2;
+    padding-bottom: 0.5em;
+}
+
+#ingredient-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#ingredient-list li {
+    margin: 0.5em 0;
+}
+
+.red-button {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.red-button:hover {
+    background-color: #d32f2f;
 }

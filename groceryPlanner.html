@@ -11,19 +11,32 @@
 <div id="global-header"></div>
 <main>
     <section id="add-recipe" class="container">
-        <h2>Add Recipe</h2>
+        <h2>Recipe Inspector</h2>
         <form>
-            <input type="text" placeholder="Enter recipe name">
-            <input type="text" placeholder="Enter ingredient">
-            <input type="text" placeholder="Enter ingredient">
-            <input type="text" placeholder="Enter ingredient">
-            <button class="special-button" type="button">Add Ingredient</button>
-            <button class="special-button" type="submit">Save Recipe</button>
+            <input type="text" id="recipe-name" placeholder="Enter recipe name">
+            <div id="ingredient-container">
+                <div class="ingredient-item hStack">
+                    <!--
+                    <input type="text" class="ingredient-amount" placeholder="Amount">
+                    <input type="text" class="ingredient-input" placeholder="Name">
+                    <input type="text" class="ingredient-category" placeholder="Category (dairy, meat, produce, etc.)">
+                    -->
+                </div>
+            </div>
+            <button id="add-ingredient" class="special-button" type="button">Add Ingredient</button>
+            <button id="save-recipe" class="special-button" type="button">Save Recipe</button>
         </form>
     </section>
     <section id="recipes" class="container">
-        <h2>Recipes</h2>
-        <button class="special-button" type="button">Generate List</button>
+        <h2>Recipe Book</h2>
+        <div id="recipe-buttons"></div>
+        <button id="generate-list" class="special-button" type="button">Generate List</button>
+        <button id="edit-recipe" class="special-button" type="button">Edit Recipe</button>
+        <button id="delete-recipe" class="special-button red-button" type="button">Delete Recipe</button>
+    </section>
+    <section id="ingredient-list" class="container">
+        <h2>Grocery List</h2>
+        <div id="ingredient-output"></div>
     </section>
 </main>
 <footer>

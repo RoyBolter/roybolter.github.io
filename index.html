@@ -3,21 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="cssFiles/style.css">
+    <title>My Website</title>
+    <link rel="stylesheet" href="cssFiles/style.css">
+    <script src="scripts/header.js" defer></script>
 </head>
 <body>
-
 <div id="global-header"></div>
-
-
-    <h1>Roy Bolter</h1>
-    <h2>Thank you for coming to my little corner of the internet!</h2>
-    <p>This is my website, it is curently in develeopment, but soon there will be information about me,
-        projects I have made, and maybe other stuff too, I'm not too sure.</p>
-    <a href="projects.html">View My Projects</a>
-
-<script src="scripts/header.js"></script>
-
+<main>
+    <section id="intro" class="container">
+        <h2>About Me</h2>
+        <p>
+            My name is Roy Bolter. I am a student at the University of Central Florida.
+            I have just finished my second year and after this summer I will be starting my
+            third year at UCF! I am interested in video games as well as artificial intelligence.
+        </p>
+        <b>Languages:</b>
+        <ul>
+            <li> Python - 2017 </li>
+            <li> C - 2021 </li>
+            <li> Java - 2022</li>
+            <li> C++ - Currently Self-Teaching for LeetCode</li>
+        </ul>
+    </section>
+    <section id="recent" class="container">
+        <h2>Recent Projects</h2>
+        <div class="highlight-container">
+            <div class="highlight">
+                <h3>Grocery Planner</h3>
+                <p>
+                    Create recipes that you cook for yourself or for others. It saves them for
+                    you to select the meals you want to make for the next week or so, and tells you
+                    what you need to buy from the grocery store.
+                </p>
+            </div>
+            <!--
+            <div class="highlight">
+                <h3>Project 2</h3>
+                <p>Description of Project 2.</p>
+            </div>
+            <div class="highlight">
+                <h3>Project 3</h3>
+                <p>Description of Project 3.</p>
+            </div>
+            <div class="highlight">
+                <h3>Project 4</h3>
+                <p>Description of Project 4.</p>
+            </div>
+            -->
+        </div>
+    </section>
+    <section id="other" class="container">
+        <h2>Contact Me</h2>
+        <ul>
+            <li> Personal Email: roybolter0717@gmail.com </li>
+            <li> School Email: ro465439@ucf.edu </li>
+            <li> Discord: roy.bolter </li>
+        </ul>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Roy Bolter. All rights reserved.</p>
+</footer>
 </body>
 </html>

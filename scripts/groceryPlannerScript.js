@@ -120,27 +120,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    let deleteTimeout;
     document.getElementById('delete-recipe').addEventListener('click', function() {
         const selectedRecipes = document.querySelectorAll('.regular-button.selected');
         if (selectedRecipes.length !== 1) {
             alert('Please select exactly one recipe to delete.');
             return;
         }
-        if (!deleteTimeout) {
-            alert('Press again within 1 second to confirm deletion.');
-            deleteTimeout = setTimeout(() => deleteTimeout = null, 1000);
-        } else {
-            clearTimeout(deleteTimeout);
-            deleteTimeout = null;
-            const recipeName = selectedRecipes[0].textContent;
-            deleteRecipe(recipeName);
-        }
+        const recipeName = selectedRecipes[0].textContent;
+        deleteRecipe(recipeName);
+        loadRecipes();
     });
 });
 
 function loadRecipes() {
     const recipes = JSON.parse(localStorage.getItem('recipes') || '[]');
+    const recipeButtonsContainer = document.getElementById('recipe-buttons');
+    recipeButtonsContainer.innerHTML = '';
     recipes.forEach(({ name, ingredients }) => {
         createRecipeButton(name, ingredients);
     });
@@ -155,34 +150,26 @@ function saveRecipe(name, ingredients) {
         recipes.push({ name, ingredients });
     }
     localStorage.setItem('recipes', JSON.stringify(recipes));
-    createRecipeButton(name, ingredients);
+    loadRecipes();
 }
 
 function deleteRecipe(name) {
     let recipes = JSON.parse(localStorage.getItem('recipes') || '[]');
     recipes = recipes.filter(recipe => recipe.name !== name);
     localStorage.setItem('recipes', JSON.stringify(recipes));
-    const button = document.querySelector(`.regular-button[data-ingredients='${name}']`);
-    if (button) {
-        button.remove();
-    }
+    loadRecipes();
 }
 
 function createRecipeButton(name, ingredients) {
-    let recipeButton = document.querySelector(`.regular-button[data-ingredients='${name}']`);
-    if (!recipeButton) {
-        recipeButton = document.createElement('button');
-        recipeButton.className = 'regular-button';
-        recipeButton.textContent = name;
-        recipeButton.dataset.ingredients = JSON.stringify(ingredients);
-        recipeButton.onclick = function() {
-            this.classList.toggle('selected');
-        };
-        const recipeButtonsContainer = document.getElementById('recipe-buttons');
-        recipeButtonsContainer.appendChild(recipeButton);
-    } else {
-        recipeButton.dataset.ingredients = JSON.stringify(ingredients);
-    }
+    let recipeButton = document.createElement('button');
+    recipeButton.className = 'regular-button';
+    recipeButton.textContent = name;
+    recipeButton.dataset.ingredients = JSON.stringify(ingredients);
+    recipeButton.onclick = function() {
+        this.classList.toggle('selected');
+    };
+    const recipeButtonsContainer = document.getElementById('recipe-buttons');
+    recipeButtonsContainer.appendChild(recipeButton);
 }
 
 function generateIngredientList() {

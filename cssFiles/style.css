@@ -71,6 +71,7 @@ main {
 }
 
 .highlight {
+    cursor: pointer;
     background-color: #3b3b52;
     border: 1px solid #4b4b6f;
     border-radius: 5px;
@@ -79,6 +80,10 @@ main {
     text-align: center;
     flex: 1 1 calc(33.333% - 20px);
     margin: 10px;
+}
+
+.highlight:hover {
+    background-color: #373852;
 }
 
 .highlight h3 {

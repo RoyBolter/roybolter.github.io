@@ -196,3 +196,29 @@ button:hover {
 .red-button:hover {
     background-color: #d32f2f;
 }
+
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.language img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.language img:hover {
+    transform: scale(1.1);
+}

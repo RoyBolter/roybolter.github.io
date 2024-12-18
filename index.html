@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="cssFiles/style.css">
-    <script src="scripts/header.js" defer></script>
 </head>
 <body>
-<div id="global-header"></div>
+<header>
+    <div class="headerItems">
+        <div class="headerItem">
+            <img src="icons/home.svg">
+        </div>
+    </div>
+</header>
 <main>
     <section id="intro" class="container">
         <h2>About Me</h2>
@@ -18,30 +23,34 @@
             set to graduate in the Spring '26 semester. My interests are A.I. and
             Game Programming. I, along with my team, recently won the Best Game
             award during the KnightHacks Hackathon with our game,
-            <a href = "https://youtu.be/2wAuvyyh0eY?si=7S4RNaxtalgya5wh"> Shipwreck Showdown</a>.
+            <a href="https://youtu.be/2wAuvyyh0eY?si=7S4RNaxtalgya5wh"> Shipwreck Showdown</a>.
             I am currently working on another Unity game that will be hosted right here on my site!
         </p>
         <h3 style="text-align: center">Languages</h3>
         <div class="languages">
             <!-- Python -->
             <div class="language">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt = "Python" title = "Python">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+                     title="Python">
             </div>
             <!-- C -->
             <div class="language">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C" title = "C">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C"
+                     title="C">
             </div>
             <!-- C++ -->
             <div class="language">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt = "C++" title = "C++">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"
+                     title="C++">
             </div>
             <!-- C# -->
             <div class="language">
-                <img src="icons/c-sharp-c.svg" alt = "C#" title = "C#">
+                <img src="icons/c-sharp-c.svg" alt="C#" title="C#">
             </div>
             <!-- Java -->
             <div class="language">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt = "Java" title = "Java">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"
+                     title="Java">
             </div>
         </div>
     </section>
@@ -63,15 +72,26 @@
         </div>
 
     </section>
-    <section id="other" class="container">
-        <h2>Contact Me</h2>
-        <ul>
-            <li> Personal Email: roy@roybolter.dev </li>
-            <li> School Email: ro465439@ucf.edu </li>
-            <li> Discord: boyroyboy </li>
-            <li><a href="https://www.linkedin.com/in/roy-bolter-b89408272/"> LinkedIn </a></li>
-        </ul>
-    </section>
 </main>
+<footer>
+    <div class="contacts">
+        <!-- Mail -->
+        <div class="contact" onclick="window.location.href='mailto:roy@roybolter.dev';">
+                <img src="icons/envelope.svg" alt="Email" title="Email">
+        </div>
+        <!-- LinkedIn -->
+        <div class="contact" onclick="window.location.href='https://www.linkedin.com/in/roy-bolter/';">
+            <img src="icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
+        </div>
+        <!-- GitHub -->
+        <div class="contact" onclick="window.location.href='https://github.com/RoyBolter';">
+            <img src="icons/github.svg" alt="GitHub" title="GitHub">
+        </div>
+        <!-- Resume -->
+        <div class="contact" onclick="window.location.href='mailto:roy@roybolter.dev';">
+            <img src="icons/file.svg" alt="Resume" title="Resume">
+        </div>
+    </div>
+</footer>
 </body>
 </html>

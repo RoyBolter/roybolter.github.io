@@ -11,7 +11,7 @@ header {
     color: #fff;
     padding: 1em 0;
     text-align: left;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 .header button {
@@ -234,8 +234,8 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 2vw;
+    height: 2vw;
     overflow: hidden;
 }
 
@@ -252,16 +252,14 @@ a:hover {
 .headerItems {
     display: flex;
     flex-wrap: wrap;
-    gap: 1vw;
+    gap: 2vw;
     justify-content: left;
 }
 
 .headerItem {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 2vw;
+    height: 2vw;
     overflow: hidden;
 }
 
@@ -269,8 +267,61 @@ a:hover {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
+    height: auto;
 }
 
 .headerItem img:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    body, html {
+        font-size: 18px;
+    }
+
+    .headerItem {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .headerItem img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .contact {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .contact img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    body, html {
+        font-size: 14px;
+    }
+
+    .headerItem {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .headerItem img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .contact {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .contact img {
+        max-width: 90%;
+        max-height: 90%;
+    }
 }

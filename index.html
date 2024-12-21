@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="cssFiles/style.css">
+    <script src="scripts/include.js"></script>
 </head>
 <body>
-<header>
-    <div class="headerItems">
-        <div class="headerItem" onclick="window.location.href='index.html';">
-            <img src="icons/home.svg">
-        </div>
-    </div>
-</header>
+<div data-include="header.html"></div>
 <main>
     <section id="intro" class="container">
         <h2>About Me</h2>
@@ -73,27 +68,6 @@
 
     </section>
 </main>
-<footer>
-    <div class="contacts">
-        <!-- Mail -->
-        <div class="contact" onclick="window.location.href='mailto:roy@roybolter.dev';">
-                <img src="icons/envelope.svg" alt="Email" title="Email">
-        </div>
-        <!-- LinkedIn -->
-        <div class="contact" onclick="window.location.href='https://www.linkedin.com/in/roy-bolter/';">
-            <img src="icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
-        </div>
-        <!-- GitHub -->
-        <div class="contact" onclick="window.location.href='https://github.com/RoyBolter';">
-            <img src="icons/github.svg" alt="GitHub" title="GitHub">
-        </div>
-        <!--
-         !-- Resume --
-        <div class="contact" onclick="window.location.href='mailto:roy@roybolter.dev';">
-            <img src="icons/file.svg" alt="Resume" title="Resume">
-        </div>
-        -->
-    </div>
-</footer>
+<div data-include="footer.html"></div>
 </body>
 </html>

@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery Planner</title>
     <link rel="stylesheet" href="cssFiles/style.css">
+    <script src="scripts/include.js"></script>
+    <script src="scripts/groceryPlannerScript.js" defer></script>
 </head>
 <body>
-<header>
-<div class="headerItems">
-    <div class="headerItem" onclick="window.location.href='index.html';">
-        <img src="icons/home.svg">
-    </div>
-</div>
-</header>
-
+<div data-include="header.html"></div>
 <main>
     <section id="add-recipe" class="container">
         <h2>Recipe Inspector</h2>
@@ -45,8 +40,6 @@
         <div id="ingredient-output"></div>
     </section>
 </main>
-
-<script src="scripts/groceryPlannerScript.js" defer></script>
-
+<div data-include="footer.html"></div>
 </body>
 </html>

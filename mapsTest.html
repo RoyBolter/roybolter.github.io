@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map with Filter</title>
+    <link rel="stylesheet" href="cssFiles/style.css">
+    <script src="scripts/include.js"></script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        .filters {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div data-include="header.html"></div>
+
+<main>
+    <h1>SG Google Maps Test</h1>
+    <div class="filters">
+        <label><input type="checkbox" id="Full Scale" checked> Full Scale</label>
+        <label><input type="checkbox" id="Demo" checked> Demo</label>
+    </div>
+    <div id="map"></div>
+</main>
+
+<div data-include="footer.html"></div>
+
+<!-- Include Google Maps API -->
+<script src="scripts/api-key.js"></script>
+<script src="scripts/mapScript.js"></script>
+</body>
+</html>

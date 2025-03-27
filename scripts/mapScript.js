@@ -1,5 +1,5 @@
 const googleMapsScript = document.createElement('script');
-googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDE11aTJrVTqmL9_YGYJnM3-ksqwjGyuk0&callback=initMap';
+googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDE11aTJrVTqmL9_YGYJnM3-ksqwjGyuk0&v=beta&libraries=marker&callback=initMap';
 googleMapsScript.async = true;
 googleMapsScript.defer = true;
 document.head.appendChild(googleMapsScript);
@@ -42,7 +42,8 @@ let locations = [
 window.initMap = function() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 39.8283, lng: -98.5795 },  // Center of the USA
-        zoom: 4
+        zoom: 4,
+        mapId: 'AIzaSyDiyEBtczgcIxL5Aw0NXDSz5cDkiA11ZH8'
     });
 
     addMarkers();
@@ -67,8 +68,6 @@ function addMarkers() {
         const markerOptions = {
             position: location.position,
             map: map,
-            title: location.name,
-            category: location.category,
             icon: '/icons/greenPin.svg'
         };
         // If the location is 'Full Scale', use the green pin
@@ -83,7 +82,30 @@ function addMarkers() {
         if (location.category === 'Community') {
             markerOptions.icon = '/icons/brownPin.svg';
         }
-        const marker = new google.maps.Marker(markerOptions);
+
+        const img = document.createElement('img');
+        img.src = markerOptions.icon;
+        img.style.width = '40px';
+        img.style.height = '40px';
+        img.draggable = false;
+        img.loading = 'lazy';
+        img.setAttribute('decoding', 'async');
+        // set the accessibility title on the image element
+        img.setAttribute('gmp-marker-title', location.name);
+
+        let marker;
+        if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+            marker = new google.maps.marker.AdvancedMarkerElement({
+                position: location.position,
+                map: map,
+                content: img
+            });
+        } else {
+            console.error('AdvancedMarkerElement is not available. Check if Maps JavaScript API v3.55+ is loaded.');
+            return;
+        }
+
+        marker.category = location.category;
         markers.push(marker);
 
         // Create an info window to display the location's name
@@ -92,7 +114,7 @@ function addMarkers() {
         });
 
         // Open the info window when the marker is clicked
-        marker.addListener('click', function() {
+        marker.addListener('click', () => {
             infoWindow.open(map, marker);
         });
     });
@@ -107,9 +129,9 @@ function updateMarkers() {
         if ((marker.category === 'Full Scale' && showCategory1) ||
             (marker.category === 'Demo' && showCategory2) ||
             (marker.category === 'Community' && showCategory3)) {
-            marker.setMap(map);
+            marker.map = map;
         } else {
-            marker.setMap(null);
+            marker.map = null;
         }
     });
 }

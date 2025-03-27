@@ -68,7 +68,8 @@ function addMarkers() {
             position: location.position,
             map: map,
             title: location.name,
-            category: location.category
+            category: location.category,
+            icon: '/icons/greenPin.svg'
         };
         // If the location is 'Full Scale', use the green pin
         if (location.category === 'Full Scale') {

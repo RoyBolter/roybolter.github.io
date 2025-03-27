@@ -72,15 +72,15 @@ function addMarkers() {
         };
         // If the location is 'Full Scale', use the green pin
         if (location.category === 'Full Scale') {
-            markerOptions.icon = '/icons/greenPin.svg';
+            markerOptions.icon = 'https://roybolter.dev/icons/greenPin.svg';
         }
         // If the location is 'Demo', use a blue pin icon
         if (location.category === 'Demo') {
-            markerOptions.icon = '/icons/bluePin.svg';
+            markerOptions.icon = 'https://roybolter.dev/icons/bluePin.svg';
         }
         // If the location is 'Community', use a brown pin
         if (location.category === 'Community') {
-            markerOptions.icon = '/icons/brownPin.svg';
+            markerOptions.icon = 'https://roybolter.dev/icons/brownPin.svg';
         }
         const marker = new google.maps.Marker(markerOptions);
         markers.push(marker);

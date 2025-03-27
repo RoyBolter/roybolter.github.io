@@ -56,6 +56,10 @@ window.initMap = function() {
     if (checkbox2) {
         checkbox2.addEventListener('change', updateMarkers);
     }
+    const checkbox3 = document.getElementById('Community');
+    if (checkbox3) {
+        checkbox3.addEventListener('change', updateMarkers);
+    }
 };
 
 function addMarkers() {
@@ -66,9 +70,17 @@ function addMarkers() {
             title: location.name,
             category: location.category
         };
-        // If the location is of category 'Demo', use a blue pin icon
+        // If the location is 'Full Scale', use the green pin
+        if (location.category === 'Full Scale') {
+            markerOptions.icon = '../icons/greenPin.svg';
+        }
+        // If the location is 'Demo', use a blue pin icon
         if (location.category === 'Demo') {
-            markerOptions.icon = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+            markerOptions.icon = '../icons/bluePin.svg';
+        }
+        // If the location is 'Community', use a brown pin
+        if (location.category === 'Community') {
+            markerOptions.icon = '../icons/brownPin.svg';
         }
         const marker = new google.maps.Marker(markerOptions);
         markers.push(marker);
@@ -88,10 +100,12 @@ function addMarkers() {
 function updateMarkers() {
     const showCategory1 = document.getElementById('Full Scale').checked;
     const showCategory2 = document.getElementById('Demo').checked;
+    const showCategory3 = document.getElementById('Community').checked;
 
     markers.forEach(marker => {
         if ((marker.category === 'Full Scale' && showCategory1) ||
-            (marker.category === 'Demo' && showCategory2)) {
+            (marker.category === 'Demo' && showCategory2) ||
+            (marker.category === 'Community' && showCategory3)) {
             marker.setMap(map);
         } else {
             marker.setMap(null);

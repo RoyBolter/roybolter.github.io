@@ -32,9 +32,9 @@ let locations = [
     { name: 'Renda', position: { lat: 32.994590152810964, lng: -97.23374448870847 }, category: 'Demo' }, // 522 Benson Lane, Roanoke TX 76262
     { name: 'Santa Barbara County', position: { lat: 34.47369861197598, lng: -120.12895710216677 }, category: 'Full Scale' }, // 14470 Calle Real, Goleta CA 93117
     { name: 'Septage', position: { lat: 41.524545948609436, lng: -81.05009427314462 }, category: 'Full Scale' }, // 12715 Madison Road, Middlefield OH 44062
-    { name: 'Walker - Thorold', position: { lat: 43.828101691327525, lng: -80.53702074424203 }, category: 'Full Scale' }, // 7963 Wellington Road 109, Arthur ON N0G 1A0
+    { name: 'Walker - All Treat Farms', position: { lat: 43.828101691327525, lng: -80.53702074424203 }, category: 'Full Scale' }, // 7963 Wellington Road 109, Arthur ON N0G 1A0
     { name: 'TRY', position: { lat: 43.07021412335865, lng: -81.2095738596063 }, category: 'Full Scale' }, // 21463 Clarke Road, Arva ON N0M 1C0
-    { name: 'Walker - All Treat Farms', position: { lat: 43.13215636484641, lng: -79.17485217309805 }, category: 'Full Scale' }, // 2800 Thorold Townline Rd, Niagara Falls Thorold ON L2E 6S4
+    { name: 'Walker - Thorold', position: { lat: 43.13215636484641, lng: -79.17485217309805 }, category: 'Full Scale' }, // 2800 Thorold Townline Rd, Niagara Falls Thorold ON L2E 6S4
     { name: 'Winton', position: { lat: 47.736226930771714, lng: -120.74403625576687 }, category: 'Full Scale' } // 17400 Winton rd, Leavenworth WA 98826
 ];
 

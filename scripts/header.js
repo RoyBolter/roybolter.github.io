@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <!--<button class="button" onclick="window.location='games.html';">Games</button>-->
             </div>
             <!--<button class="theme-switcher" onclick="toggleTheme();" id="theme-toggle-btn"></button>-->
+            
         </div>
     `;
 
